@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Memory Game</title>
+    <title>Smart Notice Board Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-
-    <h1>🧠 Memory Card Game</h1>
-
-    <div class="top-bar glass">
-        <span>⏱ <b id="time">0</b>s</span>
-        <span>🔢 <b id="moves">0</b></span>
-        <button onclick="restartGame()">Restart</button>
-        <button onclick="toggleMode()">🌙/☀️</button>
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>📌 Notice Board </h2>
+    <div class="menu">
+        <div onclick="filter('All')">🏠 All</div>
+        <div onclick="filter('Exam')">📘 Exam</div>
+        <div onclick="filter('Event')">🎉 Event</div>
+        <div onclick="filter('Holiday')">🏖 Holiday</div>
     </div>
-
-    <div class="players glass">
-        <div>👤 P1: <span id="p1">0</span></div>
-        <div>👤 P2: <span id="p2">0</span></div>
-        <p id="turn">Turn: Player 1</p>
-    </div>
-
-    <div class="best glass">
-        🏆 Best Score: <span id="best">-</span>
-    </div>
-
-    <div class="game glass" id="game"></div>
-
 </div>
 
-<div id="popup" class="popup glass">
-    <h2>🎉 Game Over!</h2>
-    <p id="result"></p>
-    <button onclick="restartGame()">Play Again</button>
+<!-- MAIN -->
+<div class="main">
+    <div class="header">
+        <input type="text" id="search" placeholder="Search..." onkeyup="searchNotice()">
+        <button class="btn" onclick="openModal()">+ Add</button>
+    </div>
+
+    <div class="grid" id="board"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+        <h3>Add Notice</h3>
+        <input type="text" id="title" placeholder="Title"><br>
+        
+        <select id="category">
+            <option>Exam</option>
+            <option>Event</option>
+            <option>Holiday</option>
+        </select>
+
+        <textarea id="desc" placeholder="Description"></textarea>
+        <button class="btn" onclick="addNotice()">Post</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

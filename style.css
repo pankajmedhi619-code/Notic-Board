@@ -1,141 +1,141 @@
-/* 🌌 BODY BACKGROUND (Premium Gradient) */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    text-align: center;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    color: #ffffff;
-}
+            margin: 0;
+            font-family: 'Segoe UI';
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+        }
 
-/* 🌞 LIGHT MODE (Soft Premium Colors) */
-body.light {
-    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-    color: #222;
-}
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
 
-/* 🧠 TITLE */
-h1 {
-    font-size: 32px;
-    letter-spacing: 1px;
-    margin-top: 15px;
-}
+        .sidebar h2 {
+            text-align: center;
+        }
 
-/* TOP BAR */
-.top-bar {
-    background: rgba(255,255,255,0.08);
-    padding: 10px 15px;
-    border-radius: 10px;
-    display: inline-flex;
-    gap: 12px;
-    align-items: center;
-    backdrop-filter: blur(8px);
-}
+        .menu div {
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
-/* PLAYER SECTION */
-.players {
-    margin-top: 10px;
-    font-size: 16px;
-}
+        .menu div:hover {
+            background: rgba(255,255,255,0.2);
+        }
 
-/* TURN TEXT */
-#turn {
-    margin-top: 5px;
-    font-weight: bold;
-    color: #1c0777;
-}
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
 
-/* BUTTON */
-button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
 
-button:hover {
-    transform: scale(1.1);
-}
+        input, select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+        }
 
-/* GRID */
-.game {
-    margin: 20px auto;
-    width: 420px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-}
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            background: #00c6ff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-/* CARD (IMPROVED LOOK) */
-.card {
-    height: 60px;
-    background: linear-gradient(145deg, #2c2c3a, #3a3a4f);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
+        .btn:hover {
+            background: #0072ff;
+        }
 
-.card:hover {
-    transform: scale(1.08);
-}
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
-/* FLIPPED */
-.card.flipped {
-    background: linear-gradient(135deg, #00c9ff, #92fe9d);
-    color: #000;
-}
+        /* CARD */
+        .card {
+            background: rgba(255,255,255,0.95);
+            padding: 15px;
+            border-radius: 12px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
 
-/* MATCHED */
-.card.matched {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
-    color: #000;
-}
+        .important {
+            border-left: 6px solid red;
+        }
 
-/* 🌞 LIGHT MODE CARDS */
-body.light .card {
-    background: linear-gradient(145deg, #99becf, #777fca);
-    color: #e9a1a1;
-}
+        .title {
+            font-weight: bold;
+        }
 
-body.light .card.flipped {
-    background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    color: white;
-}
+        .category {
+            font-size: 12px;
+            color: blue;
+        }
 
-body.light .card.matched {
-    background: linear-gradient(135deg, #a8ff78, #78ffd6);
-    color: black;
-}
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            margin-top: 5px;
+        }
 
-/* POPUP */
-.popup {
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-}
+        .date {
+            font-size: 11px;
+            color: gray;
+        }
 
-/* Phone layout: zoom in background */
-@media (max-width: 650px) {
-    body {
-        background-size: 650%;      /* zoom in background */
-        background-position: center center; /* keep it centered */
-    }
+        .actions {
+            margin-top: 5px;
+        }
 
-    body.light {
-        background-size: 450%;
-        background-position: center center;
-    }
-}
+        .delete { background: red; }
+        .pin { background: orange; }
+
+        /* MODAL */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        
