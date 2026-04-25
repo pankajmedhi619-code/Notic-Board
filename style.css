@@ -138,3 +138,23 @@ body {
             padding: 8px;
             margin-top: 5px;
         }
+        @media (max-width: 768px) {
+    body { flex-direction: column; }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu { display: flex; gap: 5px; }
+
+    .grid { grid-template-columns: 1fr; }
+
+    .header { flex-direction: column; gap: 10px; }
+
+    .card { height: auto; }
+
+    .modal-box { width: 90%; }
+}
